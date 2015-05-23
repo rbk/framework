@@ -1,0 +1,55 @@
+/*
+*
+* Main SCSS file
+* Comment out the imports you don't need or want
+*
+*/
+// Uncomment your preferred starting point
+// @import "reset";
+// @import "animate"; // Optional
+
+@import "normalize";
+@import "grid";
+@import "helpers";
+@import "mixins";
+@import "social_colors";
+
+// Basic Variables
+$layout-width: 1200px;
+$gutter-size: 10px;
+$primary-color: red;
+$secondary-color: blue;
+$accent-color: green;
+
+// Media Query Breakpoints
+$ipad-landscape: 1024px;
+$ipad-potrait: 768px;
+
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #FFF;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 16px;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: #222;
+	&:hover { color: #444; }
+}
+
+h1 { }
+h2 { }
+h3 { }
+h4 { }
+h5 { }
+h6 { }
+
+@media screen and (max-width:768px){
+}
