@@ -1,5 +1,125 @@
 /*
 *
-* Grid System
-*
+*** Gritty Grid
+*** Best grid in the world
 */
+$layout-width: 99999999px;
+$gutter-size: 10px;
+
+.gritty-grid {
+	max-width: $layout-width;
+	margin: 0 auto;
+	clear: both;
+	
+	&.hide {
+		display: none;
+	}
+	// clear fix the grid container
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	// Keep box model correct in the grid
+	*, *:before, *:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	// Center a single column
+	.center {
+		margin: 0 auto;
+		float: none;
+	}
+	@media only screen and ( min-width: 768px ) {
+		.c1  { width: percentage(1/12); }
+		.c2  { width: percentage(2/12); }
+		.c3  { width: percentage(3/12); }
+		.c4  { width: percentage(4/12); }
+		.c5  { width: percentage(5/12); }
+		.c6  { width: percentage(6/12); }
+		.c7  { width: percentage(7/12); }
+		.c8  { width: percentage(8/12); }
+		.c9  { width: percentage(9/12); }
+		.c10 { width: percentage(10/12);}
+		.c11 { width: percentage(11/12);}
+		.c12 { width: percentage(12/12);}
+		
+		.c3 {
+			padding: $gutter-size;
+		}
+
+		// Set all elements with column classes to float
+		[class^="c"] {
+			background-color: #eee;
+			float: left;
+			min-height: 10px;
+
+			&.right {
+				float: right;
+			}
+			&.left {
+				float: left;
+				background-color: #000;
+			}
+		}
+	}
+}
+
+@media only screen and ( min-width: 768px ){
+	
+}
+@media only screen and ( min-width: 1024px ){
+	
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}

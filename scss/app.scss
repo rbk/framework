@@ -4,19 +4,21 @@
 * Comment out the imports you don't need or want
 *
 */
-// Uncomment your preferred starting point
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*/
+// To normalize or reset?
+
 // @import "reset";
+@import "normalize";
+
+/*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*/
 // @import "animate"; // Optional
 
-@import "normalize";
 @import "grid";
 @import "helpers";
 @import "mixins";
 @import "social_colors";
 
-// Basic Variables
-$layout-width: 1200px;
-$gutter-size: 10px;
+// Colors
 $primary-color: red;
 $secondary-color: blue;
 $accent-color: green;
@@ -25,7 +27,7 @@ $accent-color: green;
 $ipad-landscape: 1024px;
 $ipad-potrait: 768px;
 
-
+// Make all elements size the same
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
