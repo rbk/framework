@@ -2,34 +2,35 @@
 *
 *** Gritty Grid
 *** Best grid in the world
-*/
-$layout-width: 99999999px;
-$gutter-size: 10px;
 
-.gritty-grid {
+
+- blocks with equal margin, equal padding
+- block no margin, equal padding between *
+
+
+
+*/
+$layout-width: 960px;
+$gutter: 30px;
+$padding: 30px;
+
+.grid {
 	max-width: $layout-width;
 	margin: 0 auto;
 	clear: both;
+	// padding: $gutter;
 	
-	&.hide {
-		display: none;
-	}
-	// clear fix the grid container
 	&:after {
 		content: "";
 		display: table;
 		clear: both;
 	}
-	// Keep box model correct in the grid
-	*, *:before, *:after {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	// Center a single column
 	.center {
 		margin: 0 auto;
 		float: none;
+	}
+	.row {
+		clear: both;
 	}
 	@media only screen and ( min-width: 768px ) {
 		.c1  { width: percentage(1/12); }
@@ -43,83 +44,72 @@ $gutter-size: 10px;
 		.c9  { width: percentage(9/12); }
 		.c10 { width: percentage(10/12);}
 		.c11 { width: percentage(11/12);}
-		.c12 { width: percentage(12/12);}
+		.c12 { width: 100%;}
 		
-		.c3 {
-			padding: $gutter-size;
-		}
+		// .c3 {
+		// 	padding: $gutter-size;
+		// }
 
 		// Set all elements with column classes to float
 		[class^="c"] {
-			background-color: #eee;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
 			float: left;
-			min-height: 10px;
+			display: inline-block;
+			// padding: $gutter 0 $gutter $gutter;
+			text-align: justify;
+
+			padding: $gutter;
+
+			&:nth-child(0n+1) {
+				padding-right: $gutter / 2;
+				// margin-right: $gutter / 2;
+			}
+			&:nth-child(0n+2) {
+				padding-left: $gutter / 2;
+				padding-right: $gutter / 2;
+			}
+			&:nth-child(0n+3) {
+				padding-left: $gutter / 2;
+			}
+
+			// margin-right: 0px;
+			// border-right: 30px solid #000;
+			// border-right: 30px solid #000;
+
+			&:last-of-type {
+				// padding-right: $gutter;
+			}
 
 			&.right {
 				float: right;
 			}
 			&.left {
 				float: left;
-				background-color: #000;
 			}
 		}
 	}
 }
 
-@media only screen and ( min-width: 768px ){
+.block-grid {
+	max-width: $layout-width;
+	margin: 0 auto;
+	color: red;
+	border: 3px dashed red;
 	
-}
-@media only screen and ( min-width: 1024px ){
-	
-}
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-/* ----------- iPad 3 and 4 ----------- */
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
+	[class^='b'] {
+		float: left;
+		display: inline-block;
+		width: percentage(4/12);
+		text-align: justify;
+		padding: 1em;
+	}
 }
